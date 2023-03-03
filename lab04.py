@@ -56,7 +56,14 @@ def pascal(row, column):
     >>> pascal(4, 2)     # Row 4 (1 4 6 4 1), Column 2
     6
     """
-    "*** YOUR CODE HERE ***"
+    if column == 0:
+        return 1
+    elif row == 0:
+        return 0
+    else:
+        pre = pascal(row - 1, column)
+        pre_left = pascal(row - 1, column - 1)
+        return pre + pre_left
 
 
 def double_eights(n):
